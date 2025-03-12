@@ -6,7 +6,7 @@ import InputText from './InputText';
 import InputNumber from './InputNumber';
 import InputCheckbox from './InputCheckbox';
 
-
+export { default as InputText } from './InputText';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

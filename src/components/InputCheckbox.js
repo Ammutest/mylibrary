@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 
-const InputCheckbox=()=> {
-    const [arr, setArr] = useState([]);  
+const InputCheckbox = () => {
+    const [arr, setArr] = useState([]);
     const [selectedItems, setSelectedItems] = useState([]);
     const [error, setError] = useState('');
-    const [inputValue, setInputValue] = useState('');  
+    const [inputValue, setInputValue] = useState('');
 
-    
+
     const handleCheckboxChange = (event) => {
         const value = event.target.value;
         if (event.target.checked) {
@@ -16,12 +16,12 @@ const InputCheckbox=()=> {
         }
     };
 
-    
+
     const handleInputChange = (event) => {
         setInputValue(event.target.value);
     };
 
-    
+
     const handleSubmit = (event) => {
         event.preventDefault();
         if (arr.length === 0 || selectedItems.length === 0) {
@@ -32,24 +32,24 @@ const InputCheckbox=()=> {
         }
     };
 
-    
+
     const handleSetOptions = (event) => {
-        event.preventDefault();  
+        event.preventDefault();
 
         if (inputValue.trim() === '') {
             setError('Please enter at least one option.');
-            return;  
+            return;
         }
 
         const options = inputValue.split(',').map(item => item.trim());
         setArr(options);
-        setInputValue(''); 
-        setError(''); 
+        setInputValue('');
+        setError('');
     };
 
     return (
         <>
-            
+
             <form onSubmit={handleSetOptions}>
                 <input
                     type="text"

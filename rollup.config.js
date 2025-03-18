@@ -5,6 +5,8 @@ import { terser } from 'rollup-plugin-terser';  // Optional: to minify the outpu
 import resolve from 'rollup-plugin-node-resolve';  // Resolves node_modules
 import commonjs from 'rollup-plugin-commonjs';  // Converts CommonJS modules to ES6
 import postcss from 'rollup-plugin-postcss';
+import autoprefixer from 'autoprefixer';
+import cssnano from 'cssnano';
 
 export default {
   input: 'src/index.js',  // Entry point for your library
@@ -30,9 +32,13 @@ export default {
     commonjs({
         exclude: 'src/**',
       }), // Converts CommonJS modules to ES6
-      postcss({         // Handles CSS imports
-        modules: true,   // If you want to enable CSS Modules, set it to true
-        extract: true,   // Extracts CSS into a separate file (optional)
+      postcss({
+        extract: true,   // Extracts CSS into a separate file
+        minimize: true,  // Minify the CSS
+        plugins: [
+          autoprefixer(), // Adds vendor prefixes
+          cssnano(),      // Minifies the CSS
+        ],
       }),
     babel({
       exclude: 'node_modules/**',  // Exclude node_modules from Babel processing

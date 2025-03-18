@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Style.css';
 
+
 const InputText = () => {
   const [name, setName] = useState("");
   const [error, setError] = useState("");

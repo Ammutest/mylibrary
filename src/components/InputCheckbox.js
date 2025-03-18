@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Style.css';
 
 const InputCheckbox = () => {
     const [arr, setArr] = useState([]);

@@ -4,6 +4,7 @@ console.log('Starting the build...');
 import { terser } from 'rollup-plugin-terser';  // Optional: to minify the output
 import resolve from 'rollup-plugin-node-resolve';  // Resolves node_modules
 import commonjs from 'rollup-plugin-commonjs';  // Converts CommonJS modules to ES6
+import postcss from 'rollup-plugin-postcss';
 
 export default {
   input: 'src/index.js',  // Entry point for your library
@@ -29,6 +30,10 @@ export default {
     commonjs({
         exclude: 'src/**',
       }), // Converts CommonJS modules to ES6
+      postcss({         // Handles CSS imports
+        modules: true,   // If you want to enable CSS Modules, set it to true
+        extract: true,   // Extracts CSS into a separate file (optional)
+      }),
     babel({
       exclude: 'node_modules/**',  // Exclude node_modules from Babel processing
       presets: ['@babel/preset-env', '@babel/preset-react'],  // Transpile JSX and modern JS

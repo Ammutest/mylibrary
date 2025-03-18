@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import './App.css';
 
-const InputText=()=> {
+const InputText = () => {
   const [name, setName] = useState("");
   const [error, setError] = useState("");
 
@@ -23,9 +24,9 @@ const InputText=()=> {
     const validationError = validateName(name);
 
     if (validationError) {
-      setError(validationError); 
+      setError(validationError);
     } else {
-      setError(""); 
+      setError("");
       console.log("Form submitted with name:", name);
     }
   };
@@ -37,14 +38,14 @@ const InputText=()=> {
           <input
             id="name"
             type="text"
-            value={name} 
-            onChange={(e) => setName(e.target.value)} 
+            value={name}
+            onChange={(e) => setName(e.target.value)}
           />
         </label>
         <button type="submit">Submit</button>
       </form>
 
-      {error && <p style={{ color: 'red' }}>{error}</p>} 
+      {error && <p style={{ color: 'red' }}>{error}</p>}
     </>
   );
 }

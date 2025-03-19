@@ -43,7 +43,7 @@ const InputText = () => {
             onChange={(e) => setName(e.target.value)}
           />
         </label>
-        <button type="submit">Submit</button>
+        <button type="submit" style={{ backgroundColor: '#4caf50' }}>Submit</button>
       </form>
 
       {error && <p style={{ color: 'red' }}>{error}</p>}

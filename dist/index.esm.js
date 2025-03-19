@@ -35,7 +35,10 @@ const InputText = () => {
     value: name,
     onChange: e => setName(e.target.value)
   })), /*#__PURE__*/React.createElement("button", {
-    type: "submit"
+    type: "submit",
+    style: {
+      backgroundColor: '#4caf50'
+    }
   }, "Submit")), error && /*#__PURE__*/React.createElement("p", {
     style: {
       color: 'red'

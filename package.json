@@ -10,6 +10,10 @@
       "require": "./dist/index.cjs.js"
     }
   },
+  "peerDependencies": {
+   "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
@@ -18,8 +22,6 @@
     "autoprefixer": "^10.4.21",
     "cssnano": "^7.0.6",
     "mylibrary": "github:Ammutest/mylibrary",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
     "react-scripts": "5.0.1",
     "rollup": "^2.79.2",
     "rollup-plugin-postcss": "^4.0.2",
